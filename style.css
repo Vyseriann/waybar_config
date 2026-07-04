@@ -1,0 +1,170 @@
+/*  config based on - https://github.com/ashish-kus/waybar-minimal/tree/main/src */
+/* uploaded as personal backup */
+
+* {
+    border: none;
+    font-size: 11px;
+    font-family: "JetBrainsMono Nerd Font Propo,JetBrainsMono NF Propo" ;
+    margin: 0px 0px;
+    min-height: 0px;
+}
+
+window#waybar {
+  background: transparent;
+  margin: 1px;
+ }
+
+#custom-logo {
+  padding: 0 10px;
+}
+
+#media {
+  color: #42ff9f;
+  font-size: 9px;
+}
+
+#custom-media-animation {
+  font-size: 10px;
+  margin-right: 10px;
+}
+
+#custom-media-now-playing {
+  margin-right: 9px;
+}
+
+#workspaces button.active {
+  background: @highlight;
+  color: #03D6B8;
+  font-weight: 700;
+}
+
+.modules-right {
+  padding-left: 5px;
+  border-radius: 15px 15px 15px 15px;
+  margin-top: 2px;
+  margin-right: 2px;
+  background: rgba(79, 84, 94, 0.9);
+}
+
+.modules-center {
+  padding: 0 5px;
+  margin-top: 2px;
+  border-radius: 15px 15px 15px 15px;
+  background: rgba(79, 84, 94, 0.9);
+  font-size: 11px;
+}
+
+.modules-left {
+  padding-right: 5px;	
+  border-radius: 15px 15px 15px 15px;
+  margin-top: 2px;
+  margin-left: 2px;
+  background:  rgba(79, 84, 94, 0.9);
+}
+
+#battery,
+#custom-clipboard,
+#custom-colorpicker,
+#custom-powerDraw,
+#bluetooth,
+#pulseaudio,
+#network,
+#disk,
+#memory,
+#backlight,
+#cpu,
+#temperature,
+#custom-weather,
+#idle_inhibitor,
+#jack,
+#tray,
+#window,
+#workspaces,
+#clock {
+  padding: 0 5px;
+}
+#pulseaudio {
+  padding-top: 3px;
+}
+
+#temperature.critical,
+#pulseaudio.muted {
+  color: #FF0000;
+  padding-top: 0;
+}
+
+#pulseaudio-slider {
+    /* Sets the overall width of the slider track */
+   min-width: 100px;
+   padding: 0px;
+   margin: 0px 5px; /* Adds a small horizontal gap so it doesn't touch other modules */
+}
+
+/* The active/filled portion of the track */
+#pulseaudio-slider highlight {
+    min-height: 10px; /* Must match the trough height */
+    border-radius: 5px;
+    background-color: #5fd1fa; /* Color of your choice for the brightness level */
+
+}
+
+/* The actual draggable handle knob */
+#pulseaudio-slider slider {
+    min-height: 10px; /* Keeps it flush with the bar height */
+    min-width: 10px;
+    border-radius: 5px;
+    background-image: none; /* Required by Waybar to let background-color work */
+    background-color: #ffffff; /* White indicator dot */
+}
+
+#backlight-slider {
+   min-width: 100px;
+   padding: 0px;
+   margin: 0px 5px; /* Adds a small horizontal gap so it doesn't touch other modules */
+}
+
+/* The active/filled portion of the track */
+#backlight-slider highlight {
+    min-height: 10px; /* Must match the trough height */
+    border-radius: 5px;
+    background-color: #5fd1fa; /* Color of your choice for the brightness level */
+}
+
+/* The actual draggable handle knob */
+#backlight-slider slider {
+    min-height: 10px; /* Keeps it flush with the bar height */
+    min-width: 10px;
+    border-radius: 5px;
+    background-image: none; /* Required by Waybar to let background-color work */
+    background-color: #ffffff; /* White indicator dot */
+}
+
+#clock{
+  color: #03D6B8;
+}
+
+#battery.charging {
+    color: #42ff9f;
+}
+
+#battery.warning:not(.charging) {
+    color:  #ffbe61;
+}
+
+#battery.critical:not(.charging) {
+    color: #f53c3c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
